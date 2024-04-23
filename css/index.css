@@ -7,7 +7,7 @@
 .grid{
     display: grid;
     grid-template-columns:  repeat(10,1fr);
-    grid-template-rows:10% auto 10%;
+    grid-template-rows:10% auto  10%;
     grid-template-areas: "header header header header header header header header header header"
      " side side cont cont cont cont cont cont cont cont"
      "foot foot foot foot foot foot foot foot foot foot";
@@ -35,6 +35,7 @@ h1 a{
     justify-content: space-around;
     align-items: center;
     grid-area: header;
+    
 }
 nav{
     display: flex;
@@ -44,22 +45,25 @@ nav{
     background-color: var(--second-color);
     flex-wrap: wrap; 
     display: none;
+    width: 100%;
+    
 }
 .logo{
     color: var(--bg-color);
     font-size: 2rem;
 }
 .navbar{
-    display: none;
+    /* display: none; */
     grid-area: nav;
 }
 ul{
     list-style: none;
 }
 li{
-    display: inline-flex;
+    /* display: inline-flex; */
     
     font-size: 1.5rem;
+    /* width: 100%; */
 }
 li a{
     text-decoration: none;
@@ -159,6 +163,7 @@ footer{
     display: flex;
     align-items: center;
     justify-content: center;
+    display: none;
 }
 .open{
     position: fixed;
@@ -188,7 +193,15 @@ footer{
     z-index: 1;
     animation-delay: 1s;
 }
-
+.show {
+    display: block !important;
+    /* background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap; */
+  }
 @media (min-width: 480px)  {
  
     li{
@@ -197,6 +210,30 @@ footer{
     .logo{
         
         font-size: 2rem;
+    }
+}
+@media (min-width:768px){
+    footer{
+        display: block;
+    }
+    #toggle-btn{
+        display: none;
+    }
+    .navbar{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    li{
+        display: inline-flex;
+        
+        font-size: 1.5rem;
+        /* width: 100%; */
+    }
+    .main{
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
     }
 }
 @media (min-width: 600px){
@@ -264,6 +301,14 @@ footer{
      }
      .navbar{
         display: block;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+     }
+     .header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
      }
      .social-media{
         display: flex;
